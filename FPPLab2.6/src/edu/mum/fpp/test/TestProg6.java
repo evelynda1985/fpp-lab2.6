@@ -56,6 +56,19 @@ public class TestProg6 {
 		assertEquals(result3, Prog6.removeDups(source3));
 
 	}
+		
+		//Test case#13 : All the elements null
+		@SuppressWarnings("deprecation")
+		@Test
+		public void testRemoveDups3() {
+		
+		//All the elements are different
+		String[] source3 = {"", "", "", "","","", "", "", ""};
+		String[] result3 = {""};
+		
+		assertEquals(result3, Prog6.removeDups(source3));
+
+	}
 	
 	
 	//----------------------Verify if that string exist on the array-------------------------------
