@@ -1,24 +1,14 @@
 package edu.mum.fpp.entity;
 
-import java.util.Arrays;
-
 public class Prog6 {
 
-	// Hard code is allow for this exercise
-	private String[] source = new String[5];
-
 	public Prog6() {
-	}
-
-	public Prog6(String[] source) {
-		this.source = source;
 	}
 
 	// Remove duplicates
 	public static String[] removeDups(String[] source) {
 
 		String[] result = new String[source.length];
-
 		int arrayLenght = source.length;
 
 		for (int index = 0; index < arrayLenght; index++) {
@@ -90,5 +80,5 @@ public class Prog6 {
 		return resultWithoutNulls;
 
 	}
-	
+
 }
