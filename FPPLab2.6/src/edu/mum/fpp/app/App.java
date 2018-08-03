@@ -11,10 +11,7 @@ public class App {
 		//hard code array fixed by 5
 		String[] arrrayOfStrings = {"horse", "dog", "cat", "horse","dog"};
 		
-		Prog6 p6 = new Prog6(arrrayOfStrings);
-		
-		Arrays.stream(p6.removeDups(arrrayOfStrings)).forEach((x)->System.out.println(x));
-
+		System.out.println(Arrays.toString(Prog6.removeDups(arrrayOfStrings)));
 
 	}
 

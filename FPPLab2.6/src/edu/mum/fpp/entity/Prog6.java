@@ -15,7 +15,7 @@ public class Prog6 {
 	}
 
 	// Remove duplicates
-	public String[] removeDups(String[] source) {
+	public static String[] removeDups(String[] source) {
 
 		String[] result = new String[source.length];
 
@@ -38,7 +38,7 @@ public class Prog6 {
 	}
 
 	// verify if there are repeat elements in the array
-	public boolean exitsElementAt(String element, String[] source) {
+	public static boolean exitsElementAt(String element, String[] source) {
 
 		for (int i = 0; i < source.length; i++) {
 
@@ -53,7 +53,7 @@ public class Prog6 {
 	}
 
 	// Count elements in the array
-	public int countElments(String[] source) {
+	public static int countElments(String[] source) {
 
 		int numberElements = 0;
 
@@ -72,23 +72,23 @@ public class Prog6 {
 	}
 
 	// Remove nulls
-	public String[] removeNulls(String[] result) {
-		
+	public static String[] removeNulls(String[] result) {
+
 		String[] resultWithoutNulls = new String[countElments(result)];
 		int index = 0;
-		
-		for(String element : result) {
-			
-			if(element!= null) {
-				
+
+		for (String element : result) {
+
+			if (element != null) {
+
 				resultWithoutNulls[index] = element;
 				index++;
 			}
-			
-		}
-		
-		return resultWithoutNulls;
-			
-		}	
 
+		}
+
+		return resultWithoutNulls;
+
+	}
+	
 }

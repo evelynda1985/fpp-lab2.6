@@ -16,9 +16,6 @@ public class TestProg6 {
 	String[] arrrayOfStrings = {"horse", "dog", "cat", "horse","dog"};
 	String[] arrrayOfStrings1 = {"horse", "dog", "cat"};
 	String[] arrrayOfStrings2 = {"horse", "horse"};
-	String[] arrrayOfStrings3 = {"horse","dog",null,"cat",null};
-	
-	Prog6 p6 = new Prog6(arrrayOfStrings);
 	
 	//Step 2: Create the code to make this run:
 	// Create Prog6 class
@@ -28,38 +25,168 @@ public class TestProg6 {
 	@Test
 	public void testRemoveDups() {
 		
-		String[] result = {"horse","dog","cat"};
+		//Test case#1 : Example of the lab two repeated elements
+		String[] source1 = {"horse", "dog", "cat", "horse","dog"};	
+		String[] result1 = {"horse","dog","cat"};
 		
-		assertEquals(result, p6.removeDups(arrrayOfStrings));
+		assertEquals(result1, Prog6.removeDups(source1));
+	}
+	
+	//Test case#11 : All the elements are different
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveDups1() {
 		
+		//All the elements are different
+		String[] source2 = {"horse", "dog", "cat", "elephant","cow"};	
+		String[] result2 = {"horse", "dog", "cat", "elephant","cow"};
+		
+		assertEquals(result2, Prog6.removeDups(source2));
+	}
+		
+	//Test case#12 : All the elements are the same
+		@SuppressWarnings("deprecation")
+		@Test
+		public void testRemoveDups2() {
+		
+		//All the elements are different
+		String[] source3 = {"dog", "dog", "dog", "dog","dog"};	
+		String[] result3 = {"dog"};
+		
+		assertEquals(result3, Prog6.removeDups(source3));
+
 	}
 	
 	
-	//Verify if that string exist on the array
+	//----------------------Verify if that string exist on the array-------------------------------
+	//Test case#2: Verify if that string exist on the array
 	@Test
 	public void testExitsElementAt() {
 		
-		assertEquals(true, p6.exitsElementAt("horse", arrrayOfStrings));
+		assertEquals(true, Prog6.exitsElementAt("horse", arrrayOfStrings));
 		
 	}
 	
-	//Count how many elements are in the array different of null ""	
+	//Test case#3: Verify if that string exist on the array
+	@Test
+	public void testExitsElementAt1() {
+		
+		assertEquals(false, Prog6.exitsElementAt("elephant", arrrayOfStrings));
+		
+	}
+	
+	//-----------------------Count how many elements are in the array different of null--------------
+	//Test case#4: nulls are in the end
 	@Test
 	public void testCountElments() {
 		
-		assertEquals(3, p6.countElments(arrrayOfStrings3));
+		String[] arrrayOfStrings3 = {"horse","dog","cat",null, null};
+		
+		assertEquals(3, Prog6.countElments(arrrayOfStrings3));
 		
 	}
 	
+	//Test case#5: nulls in the beginning
+	@Test
+	public void testCountElments1() {
+		
+		String[] arrrayOfStrings3 = {null, null,"horse","dog","cat"};
+		
+		assertEquals(3, Prog6.countElments(arrrayOfStrings3));
+	}
+	
+	//Test case#6: nulls in between
+	@Test
+	public void testCountElments2() {
+		
+		String[] arrrayOfStrings3 = {"horse", null, "dog", null,"cat"};
+		
+		assertEquals(3, Prog6.countElments(arrrayOfStrings3));
+	}
+	
+	//Test case#7: nulls in everywhere
+	@Test
+	public void testCountElments3() {
+		
+		String[] arrrayOfStrings3 = {null, "horse", null, "dog", null,"cat", null};
+		
+		assertEquals(3, Prog6.countElments(arrrayOfStrings3));
+	}
+	
+	//Test case#7: Everything it is null
+	@Test
+	public void testCountElments4() {
+		
+		String[] arrrayOfStrings3 = {null, null, null, null, null, null, null};
+		
+		assertEquals(0, Prog6.countElments(arrrayOfStrings3));
+	}
+	
+	//---------------------Remove nulls--------------------------------------------------------
+	
 	//Remove nulls
+	//test case#8: removing null in the end
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testRemoveNulls() {
 		
+		String[] arrrayOfStrings3 = {"horse","dog","cat",null, null};
 		String[] result = {"horse","dog","cat"};
 		
-		assertEquals(result, p6.removeNulls(arrrayOfStrings3));
+		assertEquals(result, Prog6.removeNulls(arrrayOfStrings3));
 		
 	}
+	
+	//test case#8: removing null in the beginning
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveNulls1() {
+		
+		String[] arrrayOfStrings3 = {null, null, "horse","dog","cat", };
+		String[] result = {"horse","dog","cat"};
+		
+		assertEquals(result, Prog6.removeNulls(arrrayOfStrings3));
+		
+	}
+	
+	//test case#9: removing null in between
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveNulls2() {
+		
+		String[] arrrayOfStrings3 = {"horse", null, "dog", null, "cat"};
+		String[] result = {"horse","dog","cat"};
+		
+		assertEquals(result, Prog6.removeNulls(arrrayOfStrings3));
+		
+	}
+	
+	//test case#10: removing null in everywhere
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveNulls3() {
+		
+		String[] arrrayOfStrings3 = {null, "horse", null, "dog", null, "cat", null};
+		String[] result = {"horse","dog","cat"};
+		
+		assertEquals(result, Prog6.removeNulls(arrrayOfStrings3));
+		
+	}
+	
+	//test case#10: all the array is null
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveNulls4() {
+		
+		String[] arrrayOfStrings3 = {null, null, null, null, null, null, null};
+		String[] result = {};
+		
+		assertEquals(result, Prog6.removeNulls(arrrayOfStrings3));
+		
+	}
+	
+	//Step 3: Refactor we require to print out like this: ["horse","dog","cat"]
+	//include the static key word and create new test cases
+	//Now we will create handling exception
 	
 }
